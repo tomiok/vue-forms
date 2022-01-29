@@ -8,6 +8,51 @@
 <body>
 <div id="app">
     <h1>{{title}}</h1>
+
+    <div>
+        <form id="user-form" @submit.prevent="handleSubmit()">
+            <label>
+                <input type="text" placeholder="name" v-model.trim="user.name"/>
+            </label>
+            <br><br>
+            <label>
+                <input type="number" placeholder="age" v-model="user.age" max="120"/>
+            </label>
+            <br><br>
+            <label>Languages</label><br>
+            <label>
+                <input type="checkbox" id="golang" value="golang" v-model="user.languages">
+                <label for="golang"> Golang </label>
+            </label>
+            <label>
+                <input type="checkbox" id="javascript" value="javascript" v-model="user.languages">
+                <label for="javascript"> Javascript </label>
+            </label>
+            <label>
+                <input type="checkbox" id="c++" value="c++" v-model="user.languages">
+                <label for="c++"> C++ </label>
+            </label>
+            <br>
+            <label>
+                Genre
+            </label>
+            <br>
+            <label>
+                <input type="radio" id="m" value="m" v-model="user.genre">
+                <label for="m">male</label>
+                <input type="radio" id="f" value="f" v-model="user.genre">
+                <label for="f">female</label>
+            </label>
+            <br>
+            <label>
+                <button>Submit</button>
+            </label>
+        </form>
+    </div>
+
+    <div>
+        <h1>Data: {{completeName}}</h1>
+    </div>
 </div>
 <script src="js/main.js"></script>
 </body>
